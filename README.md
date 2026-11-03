@@ -2,7 +2,7 @@
 
 **Small talk for GTA 6.** Write a short dialogue script and two animated characters act it out as explainer clips, with speech, speech bubbles, fact-check tags and big captions. It ships with three clips about what Rockstar has confirmed for GTA 6, and works for any other topic too. Everything runs in the browser with plain HTML, CSS and JavaScript: no frameworks, no build step, no dependencies.
 
-**Live demo:** https://pap35000.github.io/gta-6-explainer-duo/
+**Live demo:** https://pap35000.github.io/vice-city-talk/
 
 > 🇬🇷 [Ελληνική περιγραφή παρακάτω](#ελληνικά)
 
