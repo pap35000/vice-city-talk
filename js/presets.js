@@ -103,5 +103,5 @@ Lena [ok]: In the state of Leonida, with Vice City, the Keys and Mount Kalaga. {
   ];
 
   if (typeof module !== "undefined" && module.exports) module.exports = PRESETS;
-  else root.EXPLAINER_PRESETS = PRESETS;
+  else root.VICE_CITY_TALK_PRESETS = PRESETS;
 })(typeof window !== "undefined" ? window : globalThis);

@@ -1,7 +1,7 @@
 {
-  "name": "explainer-duo",
+  "name": "vice-city-talk",
   "version": "1.0.0",
-  "description": "Write a dialogue script and two animated characters perform it as short explainer clips. Canvas 2D + Web Speech API, no dependencies.",
+  "description": "Small talk for GTA 6. Write a dialogue script and two animated characters perform it as short explainer clips. Canvas 2D + Web Speech API, no dependencies.",
   "private": true,
   "license": "MIT",
   "scripts": {

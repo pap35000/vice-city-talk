@@ -4,9 +4,10 @@
  */
 (function () {
   "use strict";
-  const { t } = ExplainerI18n;
-  const P = ExplainerParser, Scene = ExplainerScene, R = ExplainerRecorder;
-  const STORAGE_KEY = "explainer-duo:v1";
+  const { t } = ViceCityTalkI18n;
+  const P = ViceCityTalkParser, Scene = ViceCityTalkScene, R = ViceCityTalkRecorder;
+  const STORAGE_KEY = "vice-city-talk:v1";
+  const LEGACY_STORAGE_KEY = "explainer-duo:v1";   // saves made before the rename
   const RELEASE = new Date(2026, 10, 19);
 
   const $ = (id) => document.getElementById(id);
@@ -18,7 +19,7 @@
   // ---------- state ----------
   const state = {
     uiLang: "el",
-    script: EXPLAINER_PRESETS[0].script,
+    script: VICE_CITY_TALK_PRESETS[0].script,
     themeOverride: "",
     characters: clone(Scene.DEFAULT_CHARACTERS),
     speed: 1,
@@ -29,7 +30,7 @@
 
   function load() {
     try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY) || "null");
       if (saved && typeof saved.script === "string") Object.assign(state, saved);
     } catch (e) { /* storage unavailable */ }
   }
@@ -55,7 +56,7 @@
 
   // ---------- player ----------
   let endWaiter = null;
-  const player = new ExplainerPlayer({
+  const player = new ViceCityTalkPlayer({
     getVoice,
     getPitch: (who) => Number(state.characters[who] && state.characters[who].pitch) || 1,
     onChange: syncUI,
@@ -303,8 +304,8 @@
   }
 
   function exportProject() {
-    const data = { app: "explainer-duo", version: 1, script: state.script, characters: state.characters, themeOverride: state.themeOverride };
-    R.download("explainer-duo-project.json", JSON.stringify(data, null, 2), "application/json");
+    const data = { app: "vice-city-talk", version: 1, script: state.script, characters: state.characters, themeOverride: state.themeOverride };
+    R.download("vice-city-talk-project.json", JSON.stringify(data, null, 2), "application/json");
   }
 
   function importProject(file) {
@@ -312,7 +313,7 @@
     fr.onload = () => {
       try {
         const d = JSON.parse(fr.result);
-        if (d.app !== "explainer-duo" || typeof d.script !== "string") throw new Error("bad file");
+        if (!["vice-city-talk", "explainer-duo"].includes(d.app) || typeof d.script !== "string") throw new Error("bad file");
         state.script = d.script;
         if (Array.isArray(d.characters) && d.characters.length === 2) state.characters = d.characters.map((c, i) => Object.assign(clone(Scene.DEFAULT_CHARACTERS[i]), c));
         state.themeOverride = d.themeOverride || "";
@@ -325,8 +326,8 @@
 
   // ---------- language ----------
   function setLang(l) {
-    state.uiLang = l; ExplainerI18n.lang = l;
-    ExplainerI18n.apply(document);
+    state.uiLang = l; ViceCityTalkI18n.lang = l;
+    ViceCityTalkI18n.apply(document);
     $("lang-el").setAttribute("aria-pressed", String(l === "el"));
     $("lang-en").setAttribute("aria-pressed", String(l === "en"));
     $("sound").textContent = player.sound ? t("soundOn") : t("soundOff");
@@ -365,9 +366,9 @@
     $("lang-en").onclick = () => setLang("en");
 
     const presetSel = $("preset");
-    EXPLAINER_PRESETS.forEach((p) => { const o = document.createElement("option"); o.value = p.id; o.textContent = p.label; presetSel.appendChild(o); });
+    VICE_CITY_TALK_PRESETS.forEach((p) => { const o = document.createElement("option"); o.value = p.id; o.textContent = p.label; presetSel.appendChild(o); });
     $("load-preset").onclick = () => {
-      const p = EXPLAINER_PRESETS.find((x) => x.id === presetSel.value);
+      const p = VICE_CITY_TALK_PRESETS.find((x) => x.id === presetSel.value);
       if (!p) return;
       state.script = p.script; state.themeOverride = "";
       $("script").value = p.script;
@@ -428,7 +429,7 @@
 
   // ---------- boot ----------
   load();
-  ExplainerI18n.lang = state.uiLang;
+  ViceCityTalkI18n.lang = state.uiLang;
   player.speed = state.speed;
   bind();
   $("script").value = state.script;

@@ -4,7 +4,7 @@
 
   const STRINGS = {
     el: {
-      tagline: "Γράψε ένα σενάριο. Δύο ανθρωπάκια το λένε σε κλιπ.",
+      tagline: "Κουβεντούλα για το GTA 6. Γράψε σενάριο και δύο ανθρωπάκια το λένε σε κλιπ.",
       play: "▶ Παίξε", pause: "❚❚ Παύση", resume: "▶ Συνέχεια", nextClip: "▶ Επόμενο κλιπ", again: "↺ Ξανά από το 1ο",
       restart: "↺ Από την αρχή", prev: "⏮ Προηγ.", next: "Επόμ. ⏭",
       soundOn: "🔊 Φωνή", soundOff: "🔇 Χωρίς φωνή",
@@ -27,7 +27,7 @@
       recUnsupported: "Ο browser σου δεν υποστηρίζει εγγραφή βίντεο. Δοκίμασε Chrome, Edge ή Firefox.",
       exportVideoNote: "Το βίντεο γράφεται χωρίς ήχο, γιατί ο browser δεν επιτρέπει εγγραφή της φωνής. Βάλε δίπλα τους υπότιτλους .srt.",
       subsTitle: "Υπότιτλοι", downloadSrt: "⤓ Κατέβασε .srt", copySrt: "Αντιγραφή", copied: "Αντιγράφηκε.", copyFailed: "Επίλεξε το κείμενο και αντέγραψέ το.",
-      projectTitle: "Project", exportJson: "⤓ Αποθήκευση project (.json)", importJson: "Άνοιγμα project", imported: "Το project φορτώθηκε.", importFailed: "Αυτό το αρχείο δεν είναι project του Explainer Duo.",
+      projectTitle: "Project", exportJson: "⤓ Αποθήκευση project (.json)", importJson: "Άνοιγμα project", imported: "Το project φορτώθηκε.", importFailed: "Αυτό το αρχείο δεν είναι project του Vice City Talk.",
       downloadNote: "Αν δεν κατεβαίνει τίποτα, άνοιξε τη σελίδα από το GitHub Pages ή τοπικά: εδώ ο browser μπλοκάρει τις λήψεις.",
       statusIdle: "Πάτα «Παίξε» ή το Space.", statusPlaying: "Παίζει: {title}", statusPaused: "Σε παύση.", statusEnd: "Τέλος κλιπ {n}/{total}.",
       noVoice: "Δεν βρέθηκε φωνή για τη γλώσσα «{lang}». Το κλιπ παίζει με συννεφάκια.",
@@ -36,7 +36,7 @@
       legendOk: "Επιβεβαιωμένο", legendRep: "Αναφορά Τύπου", legendUnc: "Ανεπιβεβαίωτο"
     },
     en: {
-      tagline: "Write a script. Two characters act it out as clips.",
+      tagline: "Small talk for GTA 6. Write a script and two characters act it out as clips.",
       play: "▶ Play", pause: "❚❚ Pause", resume: "▶ Resume", nextClip: "▶ Next clip", again: "↺ Start over",
       restart: "↺ Restart", prev: "⏮ Prev", next: "Next ⏭",
       soundOn: "🔊 Voice", soundOff: "🔇 Muted",
@@ -59,7 +59,7 @@
       recUnsupported: "This browser can't record video. Try Chrome, Edge or Firefox.",
       exportVideoNote: "Videos are silent because browsers don't allow recording synthesized speech. Pair them with the .srt subtitles.",
       subsTitle: "Subtitles", downloadSrt: "⤓ Download .srt", copySrt: "Copy", copied: "Copied.", copyFailed: "Select the text and copy it.",
-      projectTitle: "Project", exportJson: "⤓ Save project (.json)", importJson: "Open project", imported: "Project loaded.", importFailed: "That file isn't an Explainer Duo project.",
+      projectTitle: "Project", exportJson: "⤓ Save project (.json)", importJson: "Open project", imported: "Project loaded.", importFailed: "That file isn't a Vice City Talk project.",
       downloadNote: "If nothing downloads, open the page from GitHub Pages or locally: this preview blocks downloads.",
       statusIdle: "Press Play or Space.", statusPlaying: "Playing: {title}", statusPaused: "Paused.", statusEnd: "End of clip {n}/{total}.",
       noVoice: "No voice found for language “{lang}”. The clip plays with speech bubbles only.",
@@ -83,7 +83,7 @@
     doc.querySelectorAll("[data-lang]").forEach((el) => { el.hidden = el.dataset.lang !== lang; });
   }
 
-  root.ExplainerI18n = {
+  root.ViceCityTalkI18n = {
     t, apply,
     get lang() { return lang; },
     set lang(v) { lang = STRINGS[v] ? v : "el"; }

@@ -314,5 +314,5 @@
     if (s.showTitle && s.clip) titleCard(s);
   }
 
-  root.ExplainerScene = { draw, W, H, DEFAULT_CHARACTERS, TAGS, TAG_COLORS };
+  root.ViceCityTalkScene = { draw, W, H, DEFAULT_CHARACTERS, TAGS, TAG_COLORS };
 })(window);

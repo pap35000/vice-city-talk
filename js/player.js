@@ -4,7 +4,7 @@
  */
 (function (root) {
   "use strict";
-  const P = root.ExplainerParser;
+  const P = root.ViceCityTalkParser;
 
   class Player {
     constructor(opts) {
@@ -123,5 +123,5 @@
     }
   }
 
-  root.ExplainerPlayer = Player;
+  root.ViceCityTalkPlayer = Player;
 })(window);

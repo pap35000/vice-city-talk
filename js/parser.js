@@ -1,5 +1,5 @@
 /*
- * Script parser for Explainer Duo.
+ * Script parser for Vice City Talk.
  *
  * Format (one statement per line):
  *   @lang el              language of the voices and tag labels
@@ -11,7 +11,7 @@
  *   // comment
  *
  * {{days}} and other {{vars}} are replaced before parsing a line.
- * Works in the browser (window.ExplainerParser) and in Node (module.exports).
+ * Works in the browser (window.ViceCityTalkParser) and in Node (module.exports).
  */
 (function (root) {
   "use strict";
@@ -129,5 +129,5 @@
 
   const api = { parseScript, estimateDuration, clipDuration, toSRT, srtTime, normalize, THEMES, GAP_MS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
-  else root.ExplainerParser = api;
+  else root.ViceCityTalkParser = api;
 })(typeof window !== "undefined" ? window : globalThis);

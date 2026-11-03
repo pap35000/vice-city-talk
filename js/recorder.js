@@ -49,5 +49,5 @@
       .replace(/[^a-z0-9Ͱ-Ͽ]+/g, "-").replace(/^-+|-+$/g, "") || "clip";
   }
 
-  root.ExplainerRecorder = { supported, start, download, slug };
+  root.ViceCityTalkRecorder = { supported, start, download, slug };
 })(window);

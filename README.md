@@ -1,12 +1,12 @@
-# Explainer Duo
+# Vice City Talk
 
-Write a short dialogue script and two animated characters act it out as explainer clips, with speech, speech bubbles, fact-check tags and big captions. Everything runs in the browser with plain HTML, CSS and JavaScript: no frameworks, no build step, no dependencies.
+**Small talk for GTA 6.** Write a short dialogue script and two animated characters act it out as explainer clips, with speech, speech bubbles, fact-check tags and big captions. It ships with three clips about what Rockstar has confirmed for GTA 6, and works for any other topic too. Everything runs in the browser with plain HTML, CSS and JavaScript: no frameworks, no build step, no dependencies.
 
 **Live demo:** https://pap35000.github.io/gta-6-explainer-duo/
 
 > 🇬🇷 [Ελληνική περιγραφή παρακάτω](#ελληνικά)
 
-<!-- Add a screenshot or GIF here, e.g. ![Explainer Duo](docs/screenshot.png) -->
+<!-- Add a screenshot or GIF here, e.g. ![Vice City Talk](docs/screenshot.png) -->
 
 ## Features
 
@@ -106,7 +106,7 @@ Built with help from Claude, an AI assistant by Anthropic.
 
 ## Ελληνικά
 
-Το **Explainer Duo** είναι εργαλείο στον browser: γράφεις ένα σύντομο σενάριο διαλόγου και δύο κινούμενα ανθρωπάκια το λένε σε κλιπ, με φωνή, συννεφάκια, ετικέτες επιβεβαίωσης και μεγάλες λεζάντες.
+Το **Vice City Talk** είναι κουβεντούλα για το GTA 6: ένα εργαλείο στον browser όπου γράφεις ένα σύντομο σενάριο διαλόγου και δύο κινούμενα ανθρωπάκια το λένε σε κλιπ, με φωνή, συννεφάκια, ετικέτες επιβεβαίωσης και μεγάλες λεζάντες.
 
 - Δικό του απλό format σεναρίου, με μηνύματα λάθους ανά γραμμή.
 - Κίνηση με Canvas 2D: στόμα που μιλάει, ανοιγοκλείσιμο ματιών, χειρονομίες, τρία σκηνικά.
