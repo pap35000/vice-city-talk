@@ -1,0 +1,14 @@
+{
+  "name": "explainer-duo",
+  "version": "1.0.0",
+  "description": "Write a dialogue script and two animated characters perform it as short explainer clips. Canvas 2D + Web Speech API, no dependencies.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
+    "start": "npx --yes serve@14.2.4 ."
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
